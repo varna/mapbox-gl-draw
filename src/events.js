@@ -6,6 +6,21 @@ import isTap from './lib/is_tap';
 import * as Constants from './constants';
 import objectToMode from './modes/object_to_mode';
 
+function throttle(timer) {
+  let queuedCallback;
+  return (callback) => {
+    if (!queuedCallback) {
+      timer(() => {
+        const cb = queuedCallback;
+        queuedCallback = null;
+        cb();
+      });
+    }
+    queuedCallback = callback;
+  };
+}
+const throttledWrite = throttle(requestAnimationFrame);
+
 export default function(ctx) {
 
   const modes = Object.keys(ctx.options.modes).reduce((m, k) => {
@@ -40,13 +55,15 @@ export default function(ctx) {
   };
 
   events.mousemove = function(event) {
-    const button = event.originalEvent.buttons !== undefined ? event.originalEvent.buttons : event.originalEvent.which;
-    if (button === 1) {
-      return events.mousedrag(event);
-    }
-    const target = getFeaturesAndSetCursor(event, ctx);
-    event.featureTarget = target;
-    currentMode.mousemove(event);
+    throttledWrite(() => {
+      const button = event.originalEvent.buttons !== undefined ? event.originalEvent.buttons : event.originalEvent.which;
+      if (button === 1) {
+        return events.mousedrag(event);
+      }
+      const target = getFeaturesAndSetCursor(event, ctx);
+      event.featureTarget = target;
+      currentMode.mousemove(event);
+    });
   };
 
   events.mousedown = function(event) {
