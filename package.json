@@ -1,6 +1,6 @@
 {
 	"name": "@varna/mapbox-gl-draw",
-	"version": "1.4.4",
+	"version": "1.5.0",
 	"description": "A drawing component for Mapbox GL JS",
 	"homepage": "https://github.com/mapbox/mapbox-gl-draw",
 	"author": "varna",
@@ -25,7 +25,9 @@
 		"start-server": "st --no-cache -H 0.0.0.0 --port 9967 --index index.html .",
 		"start": "run-p build-token watch watch-bench start-server"
 	},
-	"files": ["dist/mapbox-gl-draw*"],
+	"files": [
+		"dist/mapbox-gl-draw*"
+	],
 	"publishConfig": {
 		"registry": "https://npm.pkg.github.com/"
 	},
@@ -33,7 +35,12 @@
 		"type": "git",
 		"url": "git://github.com/varna/mapbox-gl-draw.git"
 	},
-	"keywords": ["webgl", "mapbox", "draw", "drawing"],
+	"keywords": [
+		"webgl",
+		"mapbox",
+		"draw",
+		"drawing"
+	],
 	"bugs": {
 		"url": "https://github.com/varna/mapbox-gl-draw/issues"
 	},
