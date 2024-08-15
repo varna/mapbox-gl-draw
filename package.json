@@ -1,6 +1,6 @@
 {
   "name": "@varna/mapbox-gl-draw",
-  "version": "1.6.3",
+  "version": "1.6.4",
   "engines": {
     "node": ">=20.0.0"
   },
@@ -8,6 +8,9 @@
   "author": "varna",
   "license": "ISC",
   "homepage": "https://github.com/mapbox/mapbox-gl-draw",
+  "publishConfig": {
+		"registry": "https://npm.pkg.github.com/"
+	},
   "repository": {
     "type": "git",
     "url": "https://github.com/varna/mapbox-gl-draw.git"
