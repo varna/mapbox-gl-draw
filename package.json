@@ -1,6 +1,6 @@
 {
   "name": "@varna/mapbox-gl-draw",
-  "version": "1.6.4",
+  "version": "1.7.0",
   "engines": {
     "node": ">=20.0.0"
   },
@@ -25,7 +25,12 @@
     "drawing"
   ],
   "type": "module",
-  "exports": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./dist/mapbox-gl-draw-unminified.js": "./dist/mapbox-gl-draw-unminified.js",
+    "./dist/mapbox-gl-draw.js": "./dist/mapbox-gl-draw.js",
+    "./dist/mapbox-gl-draw.css": "./dist/mapbox-gl-draw.css"
+  },
   "main": "dist/mapbox-gl-draw.js",
   "browser": "dist/mapbox-gl-draw.js",
   "style": "dist/mapbox-gl-draw.css",
