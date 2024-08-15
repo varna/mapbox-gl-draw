@@ -1,6 +1,6 @@
 {
   "name": "@varna/mapbox-gl-draw",
-  "version": "1.6.2",
+  "version": "1.6.3",
   "engines": {
     "node": ">=20.0.0"
   },
@@ -10,7 +10,7 @@
   "homepage": "https://github.com/mapbox/mapbox-gl-draw",
   "repository": {
     "type": "git",
-    "url": "git://github.com/mapbox/mapbox-gl-draw.git"
+    "url": "https://github.com/varna/mapbox-gl-draw.git"
   },
   "bugs": {
     "url": "https://github.com/mapbox/mapbox-gl-draw/issues"
